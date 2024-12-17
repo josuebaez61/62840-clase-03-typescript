@@ -40,3 +40,106 @@ const superheroe = {
     edad: 15,
     superpoderes: ["Trepar"],
 };
+const batman = {
+    nombre: "Batman",
+    edad: 40,
+    superpoderes: ["Rico"],
+};
+class Producto {
+    constructor(precio, marca, descripcion, id, nombre) {
+        this.precio = precio;
+        this.marca = marca;
+        this.descripcion = descripcion;
+        this.id = id;
+        this.nombre = nombre;
+    }
+}
+class Persona {
+    constructor(nombre, apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+}
+class Persona2 {
+    constructor(nombre, apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+}
+const personaA = new Persona2("Marilu", "Dominguez");
+personaA.nombre;
+const ps5 = new Producto(999, "Sony", "Ps5 para jugar con tus amigos", 4, "Playstation 5");
+const pcGamer = new Producto(999, "Cualquiera", "PC GAMER 16GB RAM 1TB", 9, "PC GAMER");
+class Carrito {
+    constructor() {
+        this.productos = [];
+    }
+    listarProductos() {
+        console.log(this.productos);
+    }
+    agregarProducto(producto) {
+        this.productos.push(producto);
+    }
+}
+class Ecommerce {
+    constructor() {
+        this.productos = [ps5, pcGamer];
+        this.carrito = new Carrito();
+    }
+    buscarProducto(texto) {
+        return this.productos.find((p) => p.nombre.includes(texto));
+    }
+}
+const app = new Ecommerce();
+app.carrito.agregarProducto(pcGamer);
+class Perro {
+    constructor(cantidadPatas, tienePelo) {
+        this.cantidadPatas = cantidadPatas;
+        this.tienePelo = tienePelo;
+    }
+}
+const firulais = new Perro(4, true);
+class Humano {
+    constructor(estatura, colorOjos, peso, nombre) {
+        this.estatura = estatura;
+        this.colorOjos = colorOjos;
+        this.peso = peso;
+        this.nombre = nombre;
+    }
+    respirar() { }
+}
+class Usuario extends Humano {
+    constructor(estatura, colorOjos, peso, nombre, contrasena, email) {
+        super(estatura, colorOjos, peso, nombre);
+        this.estatura = estatura;
+        this.colorOjos = colorOjos;
+        this.peso = peso;
+        this.nombre = nombre;
+        this.contrasena = contrasena;
+        this.email = email;
+    }
+}
+const user1 = new Usuario(90, "azul", 45, "juan", "123456", "email@mail.com");
+user1.respirar();
+class Producto2 {
+    constructor(precio, nombre) {
+        this.precio = precio;
+        this.nombre = nombre;
+    }
+}
+class Playstation5 extends Producto2 {
+    constructor() {
+        super(10000, "Playstation 5");
+    }
+}
+class Paginacion {
+    constructor(total, cantPaginas, tieneSiguiente, datos) {
+        this.total = total;
+        this.cantPaginas = cantPaginas;
+        this.tieneSiguiente = tieneSiguiente;
+        this.datos = datos;
+    }
+}
+// const paginacionUsuarios = new Paginacion<Usuario>();
+// const pagiacionProducots = new Paginacion<Producto>();
+const myButton = document.querySelector("#butt4on");
